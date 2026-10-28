@@ -1,0 +1,46 @@
+:root {
+  --navy: #0f1b2d;
+  --slate: #475569;
+  --slate-light: #94a3b8;
+  --line: #e2e8f0;
+  --bg: #ffffff;
+  --accent: #2f5fb3;
+  --muted-bg: #f4f6f9;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 16px/1.65 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: #1e293b;
+  background: var(--bg);
+}
+.wrap { max-width: 46rem; margin: 0 auto; padding: 0 1rem; }
+main { padding-bottom: 3rem; min-height: 60vh; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+h1 { font-size: 1.75rem; line-height: 1.25; color: var(--navy); margin: 2rem 0 .75rem; }
+h2 { font-size: 1.2rem; color: var(--navy); margin: 2rem 0 .5rem; }
+h3 { font-size: 1rem; margin: 0; }
+.lead { font-size: 1.05rem; color: var(--slate); }
+.muted, .meta, .crumb { color: var(--slate); font-size: .9rem; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: #fff; padding: .5rem; z-index: 10; }
+
+.site-header { background: var(--navy); }
+.site-header .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; padding-top: .75rem; padding-bottom: .75rem; }
+.site-header a { color: #cbd5e1; text-decoration: none; }
+.site-header a:hover, .site-header a[aria-current='page'] { color: #fff; }
+.site-header a[aria-current='page']:not(.brand) { border-bottom: 2px solid #7aa2f7; }
+.site-header .brand { font-weight: 600; color: #fff; }
+.site-header ul { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; list-style: none; margin: 0; padding: 0; font-size: .95rem; }
+
+.rows, .releases { list-style: none; padding: 0; margin: 0; }
+.rows li, .releases > li { padding: .9rem 0; border-top: 1px solid var(--line); }
+.rows li p, .releases li p { margin: .2rem 0; }
+.tag { margin-left: .5rem; font-size: .75rem; font-weight: 400; color: var(--slate); border: 1px solid var(--line); border-radius: 3px; padding: 0 .35rem; }
+.notes { white-space: pre-wrap; font: .85rem/1.5 ui-monospace, Consolas, monospace; background: var(--muted-bg); padding: .75rem; border-radius: 4px; overflow-x: auto; }
+figure { margin: 1rem 0; }
+img { max-width: 100%; height: auto; border: 1px solid var(--line); }
+
+.site-footer { border-top: 1px solid var(--line); padding: 1.25rem 0; font-size: .9rem; color: var(--slate); }
+.site-footer .wrap { display: flex; justify-content: space-between; }
