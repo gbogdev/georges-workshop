@@ -3,17 +3,19 @@ interface Props {
   items: string[]
   ordered?: boolean
   empty?: string
+  level?: 2 | 3
 }
 
-export default function FactList({ title, items, ordered, empty = 'Not yet documented.' }: Props) {
+export default function FactList({ title, items, ordered, empty = 'Not yet documented.', level = 2 }: Props) {
   const List = ordered ? 'ol' : 'ul'
+  const Heading = `h${level}` as 'h2' | 'h3'
   return (
     <section>
-      <h2>{title}</h2>
+      <Heading>{title}</Heading>
       {items.length ? (
         <List>
-          {items.map((i) => (
-            <li key={i}>{i}</li>
+          {items.map((i, n) => (
+            <li key={n}>{i}</li>
           ))}
         </List>
       ) : (

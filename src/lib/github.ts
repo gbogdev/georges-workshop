@@ -54,6 +54,9 @@ interface ApiRelease {
   assets: { name: string; browser_download_url: string; size: number }[]
 }
 
+/** Only https links are rendered as hrefs (guards against javascript: URLs in API or cached data). */
+export const safeUrl = (u: string) => (/^https:\/\//i.test(u) ? u : '#')
+
 export async function fetchReleases(repo: string | undefined, signal?: AbortSignal): Promise<ReleaseResult> {
   if (!repo) return { status: 'no-repo' }
   const cached = readCache(repo)
@@ -71,7 +74,7 @@ export async function fetchReleases(repo: string | undefined, signal?: AbortSign
     })
     if (res.status === 404) {
       result = { status: 'not-found' }
-    } else if (res.status === 403 || res.status === 429) {
+    } else if (res.status === 429 || (res.status === 403 && (res.headers.get('x-ratelimit-remaining') === '0' || res.headers.has('retry-after')))) {
       const reset = res.headers.get('x-ratelimit-reset')
       result = { status: 'rate-limited', resetAt: reset ? new Date(Number(reset) * 1000) : null }
     } else if (!res.ok) {
@@ -86,11 +89,11 @@ export async function fetchReleases(repo: string | undefined, signal?: AbortSign
             id: r.id,
             tag: r.tag_name,
             name: r.name || r.tag_name,
-            url: r.html_url,
+            url: safeUrl(r.html_url),
             publishedAt: r.published_at,
             prerelease: r.prerelease,
             body: r.body ?? '',
-            assets: r.assets.map((a) => ({ name: a.name, url: a.browser_download_url, size: a.size })),
+            assets: r.assets.map((a) => ({ name: a.name, url: safeUrl(a.browser_download_url), size: a.size })),
           })),
       }
     }
