@@ -20,7 +20,7 @@ export default function Layout() {
       <a className="skip" href="#main">Skip to content</a>
       <header className="site-header">
         <div className="wrap bar">
-          <NavLink to="/" className="brand" end>Northstar Software</NavLink>
+          <NavLink to="/" className="brand" end>George's Workshop</NavLink>
           <nav aria-label="Main">
             <ul>
               {links.map((l) => (
@@ -37,7 +37,7 @@ export default function Layout() {
       </main>
       <footer className="site-footer">
         <div className="wrap">
-          <span>Northstar Software</span>
+          <span>George's Workshop</span>
           <a href={`https://github.com/${OWNER}`}>GitHub</a>
         </div>
       </footer>

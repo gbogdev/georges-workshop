@@ -8,7 +8,7 @@ export default function Contact() {
       <h1>Contact</h1>
       <p>
         Bug reports and questions are best raised as issues on the relevant project's GitHub repository. For anything
-        else, reach out through the profile at <a href={`https://github.com/${OWNER}`}>github.com/{OWNER}</a>.
+        else, you can reach me through my profile at <a href={`https://github.com/${OWNER}`}>github.com/{OWNER}</a>.
       </p>
     </>
   )

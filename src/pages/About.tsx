@@ -6,8 +6,8 @@ export default function About() {
     <>
       <h1>About</h1>
       <p>
-        Northstar Software is the home of three independent projects: TaskFlow, DevScope and FileForge. They are
-        developed and maintained by a single developer.
+        George's Workshop is my personal portfolio. It lists three projects: TaskFlow, DevScope and FileForge. I develop
+        and maintain them myself.
       </p>
       <p>
         This site is a static React application. Release data comes from the GitHub REST API; everything else is written

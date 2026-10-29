@@ -17,7 +17,7 @@ describe('navigation', () => {
 
   it('renders home with the three projects', () => {
     renderAt('/')
-    expect(screen.getByRole('heading', { level: 1, name: 'Northstar Software' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: "George's Workshop" })).toBeInTheDocument()
     for (const name of ['TaskFlow', 'DevScope', 'FileForge'])
       expect(screen.getAllByRole('link', { name })[0]).toBeInTheDocument()
   })
@@ -28,7 +28,7 @@ describe('navigation', () => {
     await screen.findByRole('heading', { level: 1, name: 'Products' }, { timeout: 5000 })
     await userEvent.click(await screen.findByRole('link', { name: 'TaskFlow' }, { timeout: 5000 }))
     expect(await screen.findByRole('heading', { level: 1, name: 'TaskFlow' }, { timeout: 5000 })).toBeInTheDocument()
-    expect(document.title).toBe('TaskFlow · Northstar Software')
+    expect(document.title).toBe("TaskFlow · George's Workshop")
   })
 
   it('shows not-found for unknown routes and products', async () => {

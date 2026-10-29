@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <>
       <section className="hero">
-        <h1>Northstar Software</h1>
+        <h1>George's Workshop</h1>
         <p className="lead">
-          Independent software projects built and maintained by one developer: TaskFlow, DevScope and FileForge. This site
-          collects their documentation, downloads and release notes.
+          A portfolio of the software I build: TaskFlow, DevScope and FileForge. Here you'll find what each one does,
+          how to install it, and its release notes.
         </p>
         <div className="actions">
           <Link className="btn primary" to="/products">Browse products</Link>

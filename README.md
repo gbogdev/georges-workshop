@@ -1,4 +1,4 @@
-# Northstar Software
+# George's Workshop
 
 Portfolio and product catalogue for TaskFlow, DevScope and FileForge. Release data is read from the GitHub REST API (cached 10 minutes, with rate-limit and error handling).
 
