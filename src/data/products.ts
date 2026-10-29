@@ -45,9 +45,9 @@ export const products: Product[] = [
       'Importing the same file twice creates duplicate tasks.',
     ],
     screenshots: [
-      { src: '/screenshots/taskflow/board.png', alt: 'TaskFlow Kanban board view' },
-      { src: '/screenshots/taskflow/list.png', alt: 'TaskFlow list view' },
-      { src: '/screenshots/taskflow/dashboard.png', alt: 'TaskFlow dashboard view' },
+      { src: `${import.meta.env.BASE_URL}screenshots/taskflow/board.png`, alt: 'TaskFlow Kanban board view' },
+      { src: `${import.meta.env.BASE_URL}screenshots/taskflow/list.png`, alt: 'TaskFlow list view' },
+      { src: `${import.meta.env.BASE_URL}screenshots/taskflow/dashboard.png`, alt: 'TaskFlow dashboard view' },
     ],
   },
   {

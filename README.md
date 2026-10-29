@@ -25,7 +25,11 @@ Copy `.env.example` to `.env` to set an optional `VITE_GITHUB_TOKEN` (raises the
 
 ## Deployment
 
-Any static host. Serve `dist/` and rewrite unknown paths to `index.html` (single-page routing). For GitHub Pages, use a host or workflow that provides that fallback (copy `index.html` to `404.html`).
+Pushes to `main` deploy to GitHub Pages via `.github/workflows/deploy.yml` (tests, then a build with base path `/georges-workshop/`). The workflow copies `index.html` to `404.html` so deep links work on Pages. For any other static host, run `npm run build`, serve `dist/`, and rewrite unknown paths to `index.html`.
+
+## License
+
+GPL-3.0-only. See [LICENSE](LICENSE).
 
 ## Acknowledgment
 
