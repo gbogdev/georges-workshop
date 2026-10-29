@@ -70,3 +70,5 @@ pre, code { max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 @media (max-width: 36rem) { h1 { font-size: 1.6rem; } .lead { font-size: 1.05rem; } }
+
+code { font: .88em ui-monospace, "Cascadia Code", Consolas, monospace; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: .05rem .35rem; }

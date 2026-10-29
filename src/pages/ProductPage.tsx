@@ -35,7 +35,7 @@ export default function ProductPage() {
       <FactList title="Features" items={product.features} />
       <FactList title="Technology" items={product.stack} />
       <FactList title="Supported platforms" items={product.platforms} />
-      <FactList title="Installation" items={product.install} ordered />
+      <FactList title="Installation" items={product.install} ordered code />
       <FactList title="Known limitations" items={product.limitations} />
 
       <section>

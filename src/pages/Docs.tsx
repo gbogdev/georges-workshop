@@ -17,7 +17,7 @@ export default function Docs() {
           <h2>
             <Link to={`/products/${p.slug}`}>{p.name}</Link>
           </h2>
-          <FactList title="Installation" items={p.install} ordered level={3} />
+          <FactList title="Installation" items={p.install} ordered code level={3} />
           <FactList title="Supported platforms" items={p.platforms} level={3} />
         </div>
       ))}
