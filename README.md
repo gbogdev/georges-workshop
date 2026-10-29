@@ -1,8 +1,22 @@
-# George's Workshop
+﻿# George's Workshop
 
 Portfolio and product catalogue for TaskFlow, DevScope and FileForge. Release data is read from the GitHub REST API (cached 10 minutes, with rate-limit and error handling).
 
 **Stack:** React, TypeScript, Vite, React Router, Vitest + Testing Library.
+
+## Screenshots
+
+Home page:
+
+![Home page](docs/screenshots/home.png)
+
+Product page with screenshots, features and installation steps:
+
+![TaskFlow product page](docs/screenshots/taskflow.png)
+
+Documentation page:
+
+![Documentation page](docs/screenshots/docs.png)
 
 ## Run locally
 
@@ -34,3 +48,4 @@ GPL-3.0-only. See [LICENSE](LICENSE).
 ## Acknowledgment
 
 AI tools were used for development guidance.
+
