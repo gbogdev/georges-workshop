@@ -18,25 +18,35 @@ export default function ProductPage() {
       </p>
       <h1>{product.name}</h1>
       <p className="lead">{product.summary}</p>
+      {product.repo && (
+        <div className="actions">
+          <a className="btn primary" href={`https://github.com/${product.repo}`}>Source on GitHub</a>
+          <a className="btn" href={`https://github.com/${product.repo}/releases`}>Releases</a>
+        </div>
+      )}
 
       <section>
         <h2>Screenshots</h2>
         {product.screenshots.length ? (
-          product.screenshots.map((s) => (
-            <figure key={s.src}>
-              <img src={s.src} alt={s.alt} loading="lazy" />
-            </figure>
-          ))
+          <div className="gallery">
+            {product.screenshots.map((s) => (
+              <figure key={s.src}>
+                <img src={s.src} alt={s.alt} loading="lazy" />
+              </figure>
+            ))}
+          </div>
         ) : (
           <p className="muted">No screenshots published yet.</p>
         )}
       </section>
 
+      <div className="panel">
       <FactList title="Features" items={product.features} />
       <FactList title="Technology" items={product.stack} />
       <FactList title="Supported platforms" items={product.platforms} />
       <FactList title="Installation" items={product.install} ordered code />
       <FactList title="Known limitations" items={product.limitations} />
+      </div>
 
       <section>
         <h2>Source and releases</h2>
